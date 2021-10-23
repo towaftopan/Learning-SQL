@@ -1,0 +1,62 @@
+--create table batch_9.muhammadtowaf (id INT, nama VARCHAR, birthdate DATE, ktp BIGINT, badge VARCHAR);
+--
+--insert into batch_9.muhammadtowaf values
+--(1, 'Udin','1990-01-01',123123123,'Pelanggan Premium'),
+--(2, 'Usep','1991-01-01',321321321,'Pelanggan Biasa');
+--
+--insert into batch_9.muhammadtowaf (id,badge) values
+--(3, 'Pelangggan Premium');
+--
+--select * from batch_9.muhammadtowaf;
+--
+--truncate table batch_9.muhammadtowaf;
+--
+--update batch_9.muhammadtowaf set nama = 'Alif', birthdate = '1997-06-07', ktp = 345345345 where id = 3;
+--
+--alter table batch_9.muhammadtowaf add alamat varchar;
+--
+--update batch_9.muhammadtowaf set alamat = 'Jl. Digital Skola' where id =3 or id=2 or id=1;
+--
+--alter table batch_9.muhammadtowaf drop column alamat;
+--
+--delete from batch_9.muhammadtowaf where nama ='Alif' or birthdate = '1990-01-01';
+--
+--update batch_9.muhammadtowaf set nama = 'Budi' where id=3;
+
+
+
+
+
+select first_name, last_name, email, first_name || ' ' || last_name || ' ' || email as concatname
+concat(first_name,' ', last_name,' ', email)
+from datasource.job_employee
+
+select sum(salary), min(salary), max(salary), avg(salary)
+from datasource.job_employee je 
+
+select count(first_name)
+from datasource.job_employee je 
+
+select salary * salary as perkalian
+ from datasource.job_employee je 
+ 
+ select job_title, max(salary), min(salary), avg(salary)
+ from datasource.job_employee je 
+ group by job_title 
+
+select first_name, job_title, salary
+from datasource.job_employee je 
+order by salary
+
+select first_name, job_title, salary
+from datasource.job_employee je 
+order by salary desc
+
+select first_name, job_title, salary
+from datasource.job_employee je 
+order by job_title, salary desc
+
+select *
+from datasource.job_employee je 
+order by salary desc
+limit 10
